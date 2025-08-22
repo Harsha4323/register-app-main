@@ -2,6 +2,7 @@ pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
         jdk 'java17'
+		mvn 'maven3'
     }
 	
  stages{
@@ -19,7 +20,6 @@ pipeline {
 
    stage("Build Application"){
             steps {
-				sh 'mvn -version'
                 sh "mvn clean package"
             }
 
